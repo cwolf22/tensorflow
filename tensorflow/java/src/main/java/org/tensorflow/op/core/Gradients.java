@@ -70,7 +70,7 @@ public class Gradients implements Op, Iterable<Operand<?>> {
     private Options() {
     }
 
-    private static void iNeedHelp() {
+    private static void forceIt() {
     }
   }
 
