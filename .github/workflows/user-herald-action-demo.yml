@@ -23,6 +23,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           rulesLocation: 'rules/*.json'
+          base: 'java_rules_test'
           DEBUG: '*'
       - name: Store applied rules to file
         run: echo '${{ fromJSON(steps.herald.outputs.appliedRules) }}'
