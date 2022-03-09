@@ -2,6 +2,7 @@
 
 @cwolf22 @cwolfTester @cwolfTester2
 
-*.java @cwolfTester2 @cwolfTester
-
+/tensorflow/java/ @cwolfTester
+*.java @cwolfTester2
+*.sh @cwolfTester2 @cwolfTester
 *.py @cwolfTester2
