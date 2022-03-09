@@ -171,4 +171,6 @@ class EagerOperation extends AbstractOperation {
   private static native long dim(long handle, int index);
 
   private static native long fun(long f, string un);
+
+  private static native long dimsum(long dim, short sum);
 }
