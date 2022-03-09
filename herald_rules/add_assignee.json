@@ -1,0 +1,6 @@
+{
+    "name": "This is a rule to add @cwolfTester as an assignee when workflow changes",
+    "includes": ["src/*.java"],
+    "action": "assign",
+    "users": ["cwolfTester"]
+}
