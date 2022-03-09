@@ -1,0 +1,28 @@
+name: Use Herald
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    types: [edited, opened, synchronize, reopened]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  herald:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Apply Herald Rules
+        uses: gagoar/use-herald-action@master
+        id: herald
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          rulesLocation: 'rules/*.json'
+          DEBUG: '*' 
+      - name: Store applied rules to file
+        run: echo '${{ fromJSON(steps.herald.outputs.appliedRules) }}'
