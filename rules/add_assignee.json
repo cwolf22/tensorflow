@@ -1,4 +1,5 @@
 {
     "users": ["cwolfTester"],
-    "action": "assign"
+    "action": "assign",
+    "includes": "*"
   }
