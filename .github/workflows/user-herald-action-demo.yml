@@ -21,7 +21,7 @@ jobs:
         uses: gagoar/use-herald-action@master
         id: herald
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: 'blarf'
           rulesLocation: 'rules/*.json'
           DEBUG: '*' 
       - name: Store applied rules to file
