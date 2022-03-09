@@ -22,6 +22,7 @@ jobs:
         id: herald
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          rulesLocation: 'herald_rules/*.json'
+          rulesLocation: 'rules/*.json'
+          DEBUG: '*'
       - name: Store applied rules to file
         run: echo '${{ fromJSON(steps.herald.outputs.appliedRules) }}'
