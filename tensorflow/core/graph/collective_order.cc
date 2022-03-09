@@ -12,6 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
+
 #include "tensorflow/core/graph/collective_order.h"
 
 #include "absl/container/flat_hash_map.h"
@@ -68,6 +69,7 @@ Status DiscoverDataDependencies(
 // and store in `dependency_edges`.
 // If there exists an edge a -> b then `dependency_edges[a]` contains `b`
 Status CreateControlDependencies(
+    const std::vector<Node*>& my_b,
     const std::vector<Node*>& collective_nodes,
     const std::vector<int32>& instance_keys,
     absl::flat_hash_map<Node*, absl::flat_hash_set<int32>>* data_dependencies,
