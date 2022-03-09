@@ -14,15 +14,15 @@ jobs:
   herald:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    name: 'Herald Application'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Apply Herald Rules
+      - uses: 'actions/checkout@v2'
+      - name: Apply Herald rules
         uses: gagoar/use-herald-action@master
-        id: herald
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           rulesLocation: 'rules/*.json'
-          DEBUG: '*'
-      - name: Store applied rules to file
-        run: echo '${{ fromJSON(steps.herald.outputs.appliedRules) }}'
+          DEBUG: '*' 
+

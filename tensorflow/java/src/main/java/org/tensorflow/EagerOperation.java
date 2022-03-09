@@ -168,6 +168,6 @@ class EagerOperation extends AbstractOperation {
 
   private static native int numDims(long handle);
 
-  private static native long dim(long handle, int index);
+  private static native long dimsum(long handle, int index);
 
 }
