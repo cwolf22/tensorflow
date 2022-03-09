@@ -22,7 +22,7 @@ jobs:
         id: herald
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          rulesLocation: 'rules/*.json'
+          rulesLocation: '*.json'
           base: 'java_rules_test'
           DEBUG: '*'
       - name: Store applied rules to file
